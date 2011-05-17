@@ -1,4 +1,4 @@
-package pe.edu.upc.dsd.onpe.ws;
+package pe.edu.upc.dsd.onpe.clientews;
 
 import java.util.List;
 
