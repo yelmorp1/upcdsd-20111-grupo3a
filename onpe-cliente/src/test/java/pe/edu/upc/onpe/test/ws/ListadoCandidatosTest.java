@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import pe.edu.upc.dsd.onpe.clientews.ServiciosWeb;
+import pe.edu.upc.dsd.onpe.ws.ServiciosWeb;
 
 public class ListadoCandidatosTest {
 	private ServiciosWeb servicios;
@@ -17,7 +17,7 @@ public class ListadoCandidatosTest {
 	}
 
 	@Test
-	public void testSaludar() {
+	public void testTamanioLista() {
 		Assert.assertEquals(4, servicios.getListaCandidatos().size());
 	}
 }
