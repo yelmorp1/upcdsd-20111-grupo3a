@@ -17,9 +17,27 @@ public class CandidatoServiceImpl implements CandidatoService{
 		candidato1.setApellidos("Fujimori");
 		candidato1.setNombre("Keiko");
 		candidato1.setPartidoPolitico("Fuerza 2011");
+		lstCandidatos.add(candidato1);
 		
+		BeanCandidato candidato2 = new BeanCandidato();
+		candidato2.setApellidos("Kuczinsky");
+		candidato2.setNombre("Pedro Pablo");
+		candidato2.setPartidoPolitico("Alianza por el Gran Cambio");
+		lstCandidatos.add(candidato2);
+				
+		BeanCandidato candidato3 = new BeanCandidato();
+		candidato3.setApellidos("Humala");
+		candidato3.setNombre("Ollanta");
+		candidato3.setPartidoPolitico("Gana Peru");
+		lstCandidatos.add(candidato3);
 		
-		return null;
+		BeanCandidato candidato4 = new BeanCandidato();
+		candidato4.setApellidos("Toledo");
+		candidato4.setNombre("Alejandro");
+		candidato4.setPartidoPolitico("Peru Posible");
+		lstCandidatos.add(candidato4);
+		
+		return lstCandidatos;
 	}
 
 }
