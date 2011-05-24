@@ -2,60 +2,18 @@
 
 Los Nodos identificados para el Sistema de Voto Electrónico, son los siguientes:
 
-Nodo1: RENIEC
+<b>Nodo1: RENIEC</b>
+Este nodo brindará la lista de candidatos al Módulo Web de Cédula Electrónica.
+<br/>
 
-Será un Web Service que brinda la lista de candidatos al Módulo Web de Cédula Electrónica.
+<b>Nodo2: JNE</b>
+Este nodo brindará la lista de electores al Módulo de Cédula Electrónica.
+<br/>
 
-Parametros: Ningun.o
+<b>Nodo3: ONPE</b>
+Este nodo recibira el voto y lo registrara. Además, permitirá ver los resultados oficiales al termino de la votación.
+<br/>
 
-Retorno: Array List de Beans Candidato.
-
-
-
-Nodo2: JNE - Servicio de Lista de Electores(Productor)
-
-Será un Web Service que brinda la lista de electores al Módulo de Cédula Electrónica.
-
-Parametros: Ninguno.
-
-Retorno: Array List de Beans Electores Hábiles.
-
-
-
-Nodo3: ONPE - Servicio de Registro de Voto
-
-Será una cola que reciba el voto y lo registre.
-
-Parametros:Bean Voto.
-
-Retorno: Ninguno.
-
-
-
-Nodo4: ONPE - Servicio de Generación de Resultados
-
-Será un método que permitirá ver los resultados oficiales al termino de la votación.
-
-Parametros:Ninguno.
-
-Retorno: Bean con resultados de la votación.
-
-
-
-Nodo5: ONPE - Módulo de Cédula Electrónica
-
-Será un formulario que capture el voto y lo envíe a una cola para su posterior registro. Para ello hará uso de los servicios del nodo 1 y 2. Una vez que el usuario registre su voto, dichos datos viajarán al nodo 3 y por último para consultar los resultados hará uso del nodo 4.
-
-Parametros:Los Ingresados por el usuario.
-
-Retorno: Flag indicando que el voto ha sido efectuado correctamente.
-
-
-
-Nodo6: BN - Servicio de Monto de Multa
-
-Será un método que calcule el monto total de la multa.
-
-Parametros: Cantidad de personas que votaron y cantidad total de electores.
-
-Retorno: Monto total de la multa.
+<b>Nodo4: BN<b/>
+Será un método que calcule el monto total de la multa de aquellos electores que no acudieron a votar.
+<br/>
