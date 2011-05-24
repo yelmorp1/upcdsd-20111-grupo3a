@@ -2,7 +2,7 @@
 
 Los Nodos identificados para el Sistema de Voto Electrónico, son los siguientes:
 
-Nodo1: RENIEC - Servicio de Lista de Candidatos (Productor)
+Nodo1: RENIEC
 
 Será un Web Service que brinda la lista de candidatos al Módulo Web de Cédula Electrónica.
 
