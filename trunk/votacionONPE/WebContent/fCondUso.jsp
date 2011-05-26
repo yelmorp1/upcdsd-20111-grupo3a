@@ -4,14 +4,10 @@
 <head>
 	<title>VENP Voto Electr&oacute;nico No Presencial</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/thickbox.css" type="text/css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
+	<link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     
     <script type="text/javascript" src="js/jquery.js"></script>
-     
-	<script language="javascript" src="${pageContext.request.contextPath}/js/dojo/dojo.js"></script>
-	<script src="${pageContext.request.contextPath}/js/cronometro.js" type="text/javascript"></script>
- 
     <script language="javascript" type="text/javascript">
 	<!--
 		window.name = 'fCondUso${pageContext.session.id}';		
@@ -128,13 +124,13 @@
                 			</div>
          				</th>
          				<th valign="top" align="center" width="25%" scope="row">
-         					&nbps;
+         					&nbsp;
          				</th>     	
         			</tr>
       			</tbody>
       		</table>
 </div>
-<form action="/Votacion" onsubmit="return checkSubmit();">
+<form action="${pageContext.request.contextPath}/Votacion" onsubmit="return checkSubmit();" method="post">
 <input type="hidden" id="flag" value=""/>
 <!--<div id="logo-app"><span>VENP Voto Electr&oacute;nico No Presencial</span></div>-->
 
@@ -171,7 +167,7 @@
 				  <p align="justify" class="boxText">- Si actualiza la p&aacute;gina o presiona F5 se cerrará su sesi&oacute;n y se descontar&aacute; un ingreso. </p>
 				  <br />
 				  <p align="center">
-				  	<span style="color:blue;font-size:20px;font-weight: bold;">N&uacute;mero de Accesos: (<bean:write name="VotacionForm" property="cantidadAccesos"/>) de (<bean:message key="votacion.numeroaccesos"/>)</span>
+				  	<span style="color:blue;font-size:20px;font-weight: bold;">N&uacute;mero de Accesos: (1) de (3)</span>
 				  </p>
 
 				  <p align="center" class="boxText">
