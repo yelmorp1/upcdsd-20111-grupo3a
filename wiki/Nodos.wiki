@@ -4,12 +4,12 @@ Los Nodos identificados para el Sistema de Voto Electrónico, son los siguientes
 
 <b>Nodo1: RENIEC</b>
 <br/>
-Este nodo brindará la lista de candidatos al Módulo Web de Cédula Electrónica.
+Este nodo brindará la lista de electores al Módulo de Cédula Electrónica.
 <br/>
 
 <b>Nodo2: JNE</b>
 <br/>
-Este nodo brindará la lista de electores al Módulo de Cédula Electrónica.
+Este nodo brindará la lista de candidatos al Módulo Web de Cédula Electrónica.
 <br/>
 
 <b>Nodo3: ONPE</b>
