@@ -37,13 +37,8 @@
 			}
 			function borrarTodoNumerico(){
 				document.forms[0].pin.value = "";
-			}
-			
-			function enviarSubmit(){
-				evento='1';
-				document.forms[0].submit();
-				document.getElementsByName("btnSubmit")[0].disabled=true;
-			}
+			}			
+
 		</script>
 	</head>
 	<body>
@@ -69,7 +64,8 @@
       		</table>
 		</div>
 
-		<form action="Votacion" method="post">
+		<form action="<%=request.getContextPath()%>/Votacion" method="post">
+		<input type="hidden" name="tipo" value="fCondUso"/>
 			<div class="cnt">
 				<div class="content">
 					<div class="block">
@@ -88,7 +84,7 @@
 				  					</tr>
 									<tr>
 										<td style="width: 120px;vertical-align: top">										
-					  					<input type="text"  id="pin" class="inputtext2" maxlength="15"/>
+					  					<input type="text"  id="pin"  name="pin" class="inputtext2" maxlength="15"/>
 										</td>
 										<td>&nbsp;
 										</td>
@@ -103,7 +99,7 @@
 				  					</tr>
 									<tr>
 										<td style="width: 120px;vertical-align: top" colspan="2">								
-								  			<input type="text"  id="dni" class="inputtext2" maxlength="8"/>					  	
+								  			<input type="text"  id="dni"  name="dni" class="inputtext2" maxlength="8"/>					  	
 										</td>
   									</tr>
 				  					<tr>
@@ -116,7 +112,7 @@
 				  					</tr>
 									<tr>
 										<td style="vertical-align: top;">						 
-						  				<input type="password"  id="contrasena" class="inputtext2" maxlength="12" readonly="true"/>			
+						  				<input type="password"  id="contrasena" name="contrasena" class="inputtext2" maxlength="12" readonly="true"/>			
 										</td>
 										<td>
                       						<div id="dvteclado">
@@ -132,21 +128,11 @@
                     						<span class="campo">Ingresar clave de verificación de la imagen</span>
                     					</td>
            							</tr>
-									<tr>	
-                    					<td>
-                    						<input type="text" class="inputtext2" name="claveVerificacion" id="claveVerificacion" tabindex="3"   maxlength="6" />
-                    					</td>
-                    					<td>                    						
-                    						<img src = "images/captcha.png" />
-                    					</td>
-                    				</tr>
+									
 								</table>
 							</div>
-							
-							<div class="inforbarError" style="display:none;"><%=request.getAttribute("errormensaje")%></div>
-								
 							<div class="botonera">
-								<input type="button" id="btnSubmit" class="boton" value="Ingresar" onclick="enviarSubmit();"/>
+								<input type="submit" id="btnSubmit" class="boton" value="Ingresar" />
 							</div>		
 						</div><!-- Fin de inner -->
 					</div><!-- Fin de block -->

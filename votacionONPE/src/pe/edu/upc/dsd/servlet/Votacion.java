@@ -12,7 +12,11 @@ public class Votacion extends HttpServlet {
    
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("entrooo");
+		String tipo = request.getParameter("tipo");
+		if(tipo.equalsIgnoreCase("fCondUso"))
+			response.sendRedirect(request.getContextPath()+"/fCondUso.jsp");
+		else if(tipo.equalsIgnoreCase("fCedula"))
+			response.sendRedirect(request.getContextPath()+"/fCedula.jsp");
 	}
 
 	
