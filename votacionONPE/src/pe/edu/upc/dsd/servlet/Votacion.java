@@ -19,8 +19,10 @@ public class Votacion extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/fCedula.jsp");
 		else if(tipo.equalsIgnoreCase("resumenVoto"))
 			response.sendRedirect(request.getContextPath()+"/fCedula.jsp");
+		else if(tipo.equalsIgnoreCase("resumenPractica"))
+			response.sendRedirect(request.getContextPath()+"/fResumenAT.jsp");
+		else if(tipo.equalsIgnoreCase("votar"))
+			response.sendRedirect(request.getContextPath()+"/fConfirmacionVoto.jsp");
 	}
-
-	
 
 }
