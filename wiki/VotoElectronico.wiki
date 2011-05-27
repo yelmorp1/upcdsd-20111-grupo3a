@@ -8,14 +8,14 @@ Sistema de Simulación de Votación Electrónica y Consulta de Resultados.
 
 Estará compuesto por cinco (5) nodos que son los siguientes:
 
-<b>Nodo1: RENIEC - Servicio de Lista de Candidatos (Productor)</b><br>
-Será un Web Service que brinda la lista de candidatos al Módulo Web de Cédula Electrónica.<br>
+<b>Nodo1: RENIEC - Servicio de Lista de Electores (Productor)</b><br>
+Será un Web Service que brinda la lista de electores al Módulo Web de Cédula Electrónica.<br>
 Parametros: Ningun.o<br>
-Retorno: Array List de Beans Candidato.<br><br>
-<b> Nodo2: JNE - Servicio de Lista de Electores(Productor)</b><br>
-Será un Web Service que brinda la lista de electores al Módulo de Cédula Electrónica.<br>
-Parametros: Ninguno.<br>
 Retorno: Array List de Beans Electores Hábiles.<br><br>
+<b> Nodo2: JNE - Servicio de Lista de candidatos(Productor)</b><br>
+Será un Web Service que brinda la lista de candidatos al Módulo de Cédula Electrónica.<br>
+Parametros: Ninguno.<br>
+Retorno: Array List de Beans Candidatos.<br><br>
 
 <b> Nodo3: ONPE - Servicio de Registro de Voto</b><br>
 Será una cola que reciba el voto y lo registre.<br>
