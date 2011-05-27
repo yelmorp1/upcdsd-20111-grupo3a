@@ -83,7 +83,7 @@
       	<img src="${imagenCabecera}" width="100%" />
 </div>
 <form action="<%=request.getContextPath()%>/Votacion">
-<input type="hidden" name="tipo" value="resumenVoto"/>
+<input type="hidden" name="tipo" value="votar"/>
 	
 <!--<div id="logo-app"><span>VENP Voto Electr&oacute;nico No Presencial</span></div> -->
 
@@ -132,43 +132,21 @@
 							    <td width="100" align="right" valign="middle" bordercolor="#CCCCCC" bgcolor="#FFFFFF">
 							    	<div align="right" >
 							      		<div align="center">
-											<c:choose>
-												<c:when test="${voto.votoBlanco == false}">
-													<!-- img src="${pageContext.request.contextPath}/cedulas/img/${sessionScope.codigoInstitucion}/${sessionScope.codigoProceso}/${voto.codigoSeleccion}.jpg"  width="85" height="90" border="1" id="img${voto.codigoSeleccion}"/ -->
-													<table>
-														<tr><td><img src="${vurlFoto}" width="85" height="90" border="1" id="img${voto.codigoSeleccion}"/></td></tr>
-													</table>
-												</c:when>
-												<c:otherwise>
-													<!-- img src="${pageContext.request.contextPath}/cedulas/img/${sessionScope.codigoInstitucion}/${sessionScope.codigoProceso}/blanco.jpg"  width="85" height="90" border="1" id="img${voto.codigoSeleccion}"/ -->
 													<bean:define id="vurlLogo"><c:out value="${pageContext.request.contextPath}"/>/images/blanco.jpg</bean:define>													
 													<table>
 														<tr><td><img src="${vurlLogo}" width="85" height="90" border="1" id="img${voto.codigoSeleccion}"/></td></tr>
-													</table>
-												</c:otherwise>
-											</c:choose>
+													</table>												
 							      		</div>
 							    	</div>
 							    </td>
 							    							    
 								<td width="100" align="right" valign="middle" bordercolor="#CCCCCC" bgcolor="#FFFFFF">
 							    	<div align="right" >
-							      		<div align="center">
-											<c:choose>
-												<c:when test="${voto.votoBlanco == false}">
-													<!-- img src="${pageContext.request.contextPath}/cedulas/img/${sessionScope.codigoInstitucion}/${sessionScope.codigoProceso}/${voto.codigoSeleccion}.jpg"  width="85" height="90" border="1" id="img${voto.codigoSeleccion}"/ -->
-													<table>
-														<tr><td><img src="${vurlLogo}" width="85" height="90" border="1" id="logo${voto.codigoSeleccion}"/></td></tr>														
-													</table>	
-												</c:when>
-												<c:otherwise>
-													<!-- img src="${pageContext.request.contextPath}/cedulas/img/${sessionScope.codigoInstitucion}/${sessionScope.codigoProceso}/blanco.jpg"  width="85" height="90" border="1" id="img${voto.codigoSeleccion}"/ -->
+							      		<div align="center">										
 													<bean:define id="vurlFoto"><c:out value="${pageContext.request.contextPath}"/>/images/blanco.jpg</bean:define>
 													<table>
 														<tr><td><img src="${vurlFoto}" width="85" height="90" border="1" id="img${voto.codigoSeleccion}"/></td></tr>
-													</table>
-												</c:otherwise>
-											</c:choose>
+													</table>												
 							      		</div>
 							    	</div>
 							    </td>
