@@ -3,7 +3,7 @@
 	<head>
 		<title>VENP Voto Electr&oacute;nico No Presencial</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/thickbox.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
     	<link rel="stylesheet" type="text/css" href="css/style.css" />
     	<link type="text/css" rel="stylesheet" href="css/teclado.css"/>
     	<link type="text/css" rel="stylesheet" href="css/style-login.css"/>
@@ -128,6 +128,14 @@
                     						<span class="campo">Ingresar clave de verificación de la imagen</span>
                     					</td>
            							</tr>
+									<tr>	
+                    					<td>
+                    						<input type="text" class="inputtext2" name="claveVerificacion" id="claveVerificacion" tabindex="3"   maxlength="6" />
+                    					</td>
+                    					<td>
+                    						<img src="images/captcha.png" />
+                    					</td>
+                    				</tr>
 									
 								</table>
 							</div>

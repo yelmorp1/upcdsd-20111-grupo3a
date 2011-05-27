@@ -3,15 +3,15 @@
 <head>
 	<title>VENP Voto Electr&oacute;nico No Presencial</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/thickbox.css" type="text/css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
+	<link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jscript.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jscript.js"></script>
    
    <!-- Referentes al dojo -->
-	<script language="javascript" src="${pageContext.request.contextPath}/js/dojo/dojo.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/js/cronometro.js"></script>
+	<script language="javascript" src="js/dojo/dojo.js"></script>
+	<script type="text/javascript" src="js/cronometro.js"></script>
    <!-- Fin de dojo -->
    
     <script language="javascript" type="text/javascript">
@@ -184,10 +184,10 @@
 			<table align="center" width="75%">
 			  <tr>
 			    <td align="center" valign="middle" class="">
-			    	<html:button property="btnCambiar" value="Cambiar" onclick="fn_corregirVoto();" styleClass="botonRojo"/>
+			    	<input type="button" id="btnCambiar" value="Cambiar" onclick="fn_corregirVoto();" class="botonRojo"/>
 			    </td>
 			    <td align="center">
-			    	<html:button property="btnVotar" styleClass="botonVerde" value="Votar" onclick="votar(); "/>
+			    	<input type="button" id="btnVotar" class="botonVerde" value="Votar" onclick="votar(); "/>
 			    </td>
 			  </tr>
 			</table>
@@ -203,13 +203,10 @@
 	</div><!-- fin de all -->
 
 	<div id="footer" style="background-color: #324B84">
-		<span>VENP</span>&nbsp;&nbsp;&nbsp;Copyright &copy; <%=Messages.ANIO%> ONPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este sistema se ve mejor con una resoluci&oacute;n de 1024x768. 
+		<span>VENP</span>&nbsp;&nbsp;&nbsp;Copyright &copy; 2011 ONPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este sistema se ve mejor con una resoluci&oacute;n de 1024x768. 
 	</div>
 	
-	<script>
-		vContextPath = '${pageContext.request.contextPath}';
-		iniciarReloj();
-	</script>
-</html:form>
+	
+</form>
 </body>
 </html>

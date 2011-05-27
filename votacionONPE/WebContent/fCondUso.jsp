@@ -45,14 +45,12 @@
 			}
 		}		
 		
-		function abrirCedula(){
-			document.forms[0].flag.value = 'cedula';
+		function abrirCedula(){			
 			var vTarget = document.forms[0].target;			
 			var ancho = screen.width - 10;			
-			var alto = screen.height - 48;
-			document.getElementsByName("btnSubmit")[0].disabled=true;
-			winPreview =  window.open("",'cedula${pageContext.session.id}View','scrollbars=yes,width='+ancho+',height='+alto);
-			document.forms[0].target = 'cedula${pageContext.session.id}View';			
+			var alto = screen.height - 48;			
+			winPreview =  window.open("",'cedulaView','scrollbars=yes, rezisable=yes, width='+900+',height='+800);
+			document.forms[0].target = 'cedulaView';			
 			document.forms[0].tipo.value = 'fCedula';			
 			document.forms[0].submit();	
 			document.forms[0].target = vTarget;
@@ -63,19 +61,6 @@
 		function verCedula(){
 			window.close();
 		}
-		
-		var statSend = false;
-		function checkSubmit() {
-		 	if (!statSend) {
-				statSend = true;
-				return true;
-			} else {				
-				return false;
-			}		
-		}
-		
-		
-		
 		
 		
 	//-->
@@ -130,8 +115,9 @@
       			</tbody>
       		</table>
 </div>
-<form action="${pageContext.request.contextPath}/Votacion" onsubmit="return checkSubmit();" method="post">
+<form action="<%=request.getContextPath()%>/Votacion" method="post">
 <input type="hidden" id="flag" value=""/>
+<input type="hidden" name="tipo" value="resumenVoto"/>
 <!--<div id="logo-app"><span>VENP Voto Electr&oacute;nico No Presencial</span></div>-->
 
 
