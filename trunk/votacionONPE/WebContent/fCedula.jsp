@@ -1,9 +1,4 @@
 <html>
-<![CDATA[<%@taglib prefix="html" uri="/WEB-INF/tlds/struts/struts-html.tld"%>]]>
-<![CDATA[<%@taglib prefix="logic" uri="/WEB-INF/tlds/struts/struts-logic.tld"%>]]>
-<![CDATA[<%@taglib prefix="bean" uri="/WEB-INF/tlds/struts/struts-bean.tld"%>]]>
-<![CDATA[<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>]]>
-
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>:::PR&Aacute;CTICA DE CEDULA GENERAL DE VOTACION:::</title>
