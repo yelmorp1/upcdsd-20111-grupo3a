@@ -7,6 +7,6 @@ import pe.edu.upc.dsd.reniec.model.BeanElector;;
 
 public interface ElectorService {
 
-	public List<BeanElector> getListaElector();
+	public List<BeanElector> getListaElectores();
 	
 }
