@@ -8,7 +8,7 @@ import pe.edu.upc.dsd.reniec.model.BeanElector;
 import pe.edu.upc.dsd.reniec.service.ElectorService;
 import pe.edu.upc.dsd.reniec.serviceImpl.ElectorServiceImpl;
 
-@WebService(endpointInterface="pe.edu.upc.dsd.reniec.ws.ServiciosReniec")
+@WebService(endpointInterface="pe.edu.upc.dsd.reniec.ws.ServicioReniec")
 public class ServicioReniecImpl implements ServicioReniec{
 
 	@Override

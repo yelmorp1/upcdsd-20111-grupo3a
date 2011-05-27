@@ -5,11 +5,11 @@
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
-	
 
-<bean id="listadoElectores_ws" class="pe.edu.upc.dsd.reniec.ws.ServicioReniecImpl" />
 
-	<jaxws:endpoint id="listadoElectoresdEndpoint" implementor="#listadoElectores_ws"
-		address="/listadoElectores" />
-		
+	<bean id="listadoElectores_ws" class="pe.edu.upc.dsd.reniec.ws.ServicioReniecImpl" />
+
+	<jaxws:endpoint id="listadoElectoresdEndpoint"
+		implementor="#listadoElectores_ws" address="/listadoElectores" />
+
 </beans> 
