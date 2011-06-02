@@ -1,10 +1,13 @@
 package pe.edu.upc.onpe.test.ws;
 
+
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import pe.edu.upc.dsd.onpe.model.BeanCandidato;
 import pe.edu.upc.dsd.onpe.ws.ServiciosWeb;
 
 public class ListadoCandidatosTest {
@@ -18,6 +21,19 @@ public class ListadoCandidatosTest {
 
 	@Test
 	public void testTamanioLista() {
-		Assert.assertEquals(4, servicios.getListaCandidatos().size());
+		Assert.assertEquals(11, servicios.getListaCandidatos().size());
 	}
+	
+	
+	@Test
+	public void testEdadDePPK() {
+		Assert.assertEquals(72, ((BeanCandidato)servicios.getListaCandidatos().get(1)).getEdad());
+	}
+	
+	
+	@Test
+	public void testPartidoPoliticoKeiko() {
+	}
+	
+	
 }
