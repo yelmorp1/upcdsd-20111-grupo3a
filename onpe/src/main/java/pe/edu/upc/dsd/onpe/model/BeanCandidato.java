@@ -1,10 +1,14 @@
 package pe.edu.upc.dsd.onpe.model;
 
-public class BeanCandidato {
+import java.io.Serializable;
+
+public class BeanCandidato implements Serializable{
 	
 	private String nombre;
 	private String apellidos;
 	private String partidoPolitico;
+	private int edad;
+	
 	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -23,6 +27,15 @@ public class BeanCandidato {
 	}
 	public String getPartidoPolitico() {
 		return partidoPolitico;
+	}
+	public int getEdad() {
+		return edad;
+	}
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}	
+	
+	
+	
 	
 }
