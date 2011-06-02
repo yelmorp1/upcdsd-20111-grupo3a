@@ -20,7 +20,7 @@ public class ListadoCandidatosTest {
 	}
 
 	@Test
-	public void testTamanioLista() {
+	public void testCantidadCandidatos() {
 		Assert.assertEquals(11, servicios.getListaCandidatos().size());
 	}
 	
@@ -33,6 +33,8 @@ public class ListadoCandidatosTest {
 	
 	@Test
 	public void testPartidoPoliticoKeiko() {
+		Assert.assertEquals("Fuerza 2011", ((BeanCandidato)servicios.getListaCandidatos().get(0)).getPartidoPolitico());
+		
 	}
 	
 	
