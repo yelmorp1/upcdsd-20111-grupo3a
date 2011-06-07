@@ -7,9 +7,12 @@
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 	
 
-<bean id="listadoCandidatos_ws" class="pe.edu.upc.dsd.onpe.ws.ServiciosWebImpl" />
+<bean id="servicios_ws" class="pe.edu.upc.dsd.onpe.ws.ServiciosWebImpl" />
 
-	<jaxws:endpoint id="listadoCandidatosdEndpoint" implementor="#listadoCandidatos_ws"
-		address="/listadoCandidatos" />
+	<jaxws:endpoint id="listadoCandidatosdEndpoint" implementor="#servicios_ws"
+		address="/listadoServicios" />
+		
+		
+		
 		
 </beans> 
