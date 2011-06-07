@@ -18,7 +18,7 @@ public class ListadoElectoresTest {
 
 	@Test
 	public void testCantidadElectores() {
-		Assert.assertEquals(11, servicio.getListaElectores().size());
+		Assert.assertEquals(30, servicio.getListaElectores().size());
 	}
 	
 }
