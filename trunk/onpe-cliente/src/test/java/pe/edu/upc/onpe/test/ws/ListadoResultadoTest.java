@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import pe.edu.upc.dsd.onpe.model.BeanCandidato;
+import pe.edu.upc.dsd.onpe.model.BeanResultado;
 import pe.edu.upc.dsd.onpe.ws.ServiciosWeb;
 
 public class ListadoResultadoTest {
@@ -22,4 +24,10 @@ public class ListadoResultadoTest {
 	public void testObtenerResultados() {
 		Assert.assertEquals(6, servicios.getObtenerResutados().size());
 	}
+	
+	@Test
+	public void testCantidadVotosOllanta() {
+		Assert.assertEquals(100000, ((BeanResultado)servicios.getObtenerResutados().get(2)).getCantVotos());
+	}
+	
 }
