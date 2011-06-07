@@ -20,6 +20,6 @@ public class ListadoResultadoTest {
 	
 	@Test
 	public void testObtenerResultados() {
-		Assert.assertEquals(11, servicios.getObtenerResutados().size());
+		Assert.assertEquals(6, servicios.getObtenerResutados().size());
 	}
 }

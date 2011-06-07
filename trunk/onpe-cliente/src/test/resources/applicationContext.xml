@@ -6,10 +6,10 @@
 	
 	
 	<jaxws:client id="listadoCandidatosClient" serviceName="ListadoCandidatosService"
-		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoCandidatos" />
+		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoServicios" />
 		
 		
 		<jaxws:client id="listadoResultadosClient" serviceName="ListadoResultadosService"
-		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoResultados" />
+		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoServicios" />
 		
 </beans>  
