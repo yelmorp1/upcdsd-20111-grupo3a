@@ -44,7 +44,7 @@
 	}
 	
 	function siguiente(){
-		document.forms[0].tipo.value = "resumenPractica";
+		document.forms[0].tipo.value = "votar";
 		document.forms[0].submit();
 	}	
 	
@@ -53,7 +53,7 @@
 </head>
 <body bgcolor="DFE8F5" bottommargin="0" leftmargin="0" onload="fn_onload();" rightmargin="0" topmargin="0">
 <form action="${pageContext.request.contextPath}/Votacion" method="post">
-<input type="hidden" name="tipo" value="resumenVoto"/>
+<input type="hidden" name="tipo" value="votar"/>
 
 <input id="voto1" name="voto1" type="hidden" value="">
 <input id="voto2" name="voto2" type="hidden" value="">
@@ -66,14 +66,15 @@
 </tr>
 <tr>
 <td align="center" colspan="2" height="98" valign="top" width="1024px">
-<img src="${pageContext.request.contextPath}/images/practique_como_votar_imgs/cabecera-internas.jpg" width="100%"></td>
+&nbsp;
+</td>
 </tr>
 <tr>
 <td align="center" background="images/bg.gif" valign="top">
 <table border="0">
 <tr>
 <td bgcolor="CCCCCC" height="40px" style="border:solid 1px;" valign="middle" width="640px" align="center">
-	<h2>ELECCI&Oacute;N DE REPRESENTANTES TITULAR Y ALTERNO</h2>
+	<h2>VOTO ELECTR&Oacute;NICO NO PRESENCIAL</h2>
 </td>
 </tr>
 <tr>

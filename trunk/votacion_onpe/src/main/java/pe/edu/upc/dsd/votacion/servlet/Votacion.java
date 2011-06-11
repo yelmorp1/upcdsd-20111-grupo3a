@@ -27,13 +27,9 @@ public class Votacion extends HttpServlet {
 			if(tipo.equalsIgnoreCase("fCondUso"))
 				response.sendRedirect(request.getContextPath()+"/fCondUso.jsp");
 			else if(tipo.equalsIgnoreCase("fCedula"))
-					verCedula(request,response);
-			else if(tipo.equalsIgnoreCase("resumenVoto"))
-				response.sendRedirect(request.getContextPath()+"/fCedula.jsp");
-			else if(tipo.equalsIgnoreCase("resumenPractica"))
-				response.sendRedirect(request.getContextPath()+"/fResumenAT.jsp");
+					verCedula(request,response);			
 			else if(tipo.equalsIgnoreCase("votar"))
-				response.sendRedirect(request.getContextPath()+"/fConfirmacionVoto.jsp");
+				votar(request,response);
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
@@ -47,6 +43,12 @@ public class Votacion extends HttpServlet {
 		List<BeanCandidato>  candidatos = servicios.getListaCandidatos();	
 		request.getSession().setAttribute("candidatos", candidatos);
 		response.sendRedirect(request.getContextPath()+"/cedula.jsp");
+	}
+	
+	public void votar(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		String seleccion = request.getParameter("seleccion");
+		System.out.println("seleccion "+seleccion);
+		response.sendRedirect(request.getContextPath()+"/fConfirmacionVoto.jsp");
 	}
 
 }
