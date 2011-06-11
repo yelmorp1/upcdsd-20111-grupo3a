@@ -8,7 +8,12 @@ public class BeanCandidato implements Serializable{
 	private String apellidos;
 	private String partidoPolitico;
 	private int edad;
-	
+		
+	//campos para que funcione la cedula
+	private String codReferencia;
+	private String codSeleccion;
+	private String logo;
+	private String foto;
 	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -33,6 +38,30 @@ public class BeanCandidato implements Serializable{
 	}
 	public void setEdad(int edad) {
 		this.edad = edad;
+	}
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+	public String getLogo() {
+		return logo;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	public String getFoto() {
+		return foto;
+	}
+	public void setCodReferencia(String codReferencia) {
+		this.codReferencia = codReferencia;
+	}
+	public String getCodReferencia() {
+		return codReferencia;
+	}
+	public void setCodSeleccion(String codSeleccion) {
+		this.codSeleccion = codSeleccion;
+	}
+	public String getCodSeleccion() {
+		return codSeleccion;
 	}	
 	
 	

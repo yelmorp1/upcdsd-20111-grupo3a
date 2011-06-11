@@ -44,8 +44,9 @@ public class Votacion extends HttpServlet {
 		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
 		ServiciosWeb servicios = context.getBean("listadoCandidatosClient", ServiciosWeb.class);
 		
-		List<BeanCandidato>  candidatos = servicios.getListaCandidatos();		
-		response.sendRedirect(request.getContextPath()+"/fCedula.jsp");
+		List<BeanCandidato>  candidatos = servicios.getListaCandidatos();	
+		request.getSession().setAttribute("candidatos", candidatos);
+		response.sendRedirect(request.getContextPath()+"/cedula.jsp");
 	}
 
 }
