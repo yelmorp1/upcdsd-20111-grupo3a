@@ -10,6 +10,8 @@ public class BeanCandidato implements Serializable{
 	private int edad;
 	private String logo;
 	private String foto;
+	private String codReferencia;
+	private String codSeleccion;
 	
 	
 	public void setNombre(String nombre) {
@@ -47,6 +49,18 @@ public class BeanCandidato implements Serializable{
 	}
 	public String getFoto() {
 		return foto;
+	}
+	public void setCodReferencia(String codReferencia) {
+		this.codReferencia = codReferencia;
+	}
+	public String getCodReferencia() {
+		return codReferencia;
+	}
+	public void setCodSeleccion(String codSeleccion) {
+		this.codSeleccion = codSeleccion;
+	}
+	public String getCodSeleccion() {
+		return codSeleccion;
 	}	
 	
 	
