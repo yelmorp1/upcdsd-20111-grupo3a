@@ -22,7 +22,10 @@ public class MultaClientTest {
 		HttpResponse response = httpclient.execute(httpget);
 		HttpEntity entity = response.getEntity();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(
-				entity.getContent()));		
-		Assert.assertNotNull(reader.readLine());
+				entity.getContent()));
+		
+		String cadena=reader.readLine();
+			System.out.println("jherrera test: "+cadena);	
+		Assert.assertNotNull(cadena);
 	}
 }
