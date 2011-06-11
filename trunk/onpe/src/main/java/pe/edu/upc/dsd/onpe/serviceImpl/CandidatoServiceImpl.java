@@ -11,7 +11,7 @@ public class CandidatoServiceImpl implements CandidatoService{
 	public List<BeanCandidato> getListaCandidatos() {
 		
 		
-		List  lstCandidatos = new ArrayList<BeanCandidato>();
+		List<BeanCandidato> lstCandidatos = new ArrayList<BeanCandidato>();
 		
 		BeanCandidato candidato1 = new BeanCandidato();
 		candidato1.setApellidos("Fujimori Iguchi");
@@ -20,13 +20,6 @@ public class CandidatoServiceImpl implements CandidatoService{
 		candidato1.setEdad(36);
 		lstCandidatos.add(candidato1);
 		
-		BeanCandidato candidato2 = new BeanCandidato();
-		candidato2.setApellidos("Kuczinsky");
-		candidato2.setNombre("Pedro Pablo");
-		candidato2.setPartidoPolitico("Alianza por el Gran Cambio");
-		candidato2.setEdad(72);
-		lstCandidatos.add(candidato2);
-				
 		BeanCandidato candidato3 = new BeanCandidato();
 		candidato3.setApellidos("Humala Tazo");
 		candidato3.setNombre("Ollanta");
@@ -34,7 +27,16 @@ public class CandidatoServiceImpl implements CandidatoService{
 		candidato3.setEdad(47);
 		lstCandidatos.add(candidato3);
 		
-		BeanCandidato candidato4 = new BeanCandidato();
+		/*BeanCandidato candidato2 = new BeanCandidato();
+		candidato2.setApellidos("Kuczinsky");
+		candidato2.setNombre("Pedro Pablo");
+		candidato2.setPartidoPolitico("Alianza por el Gran Cambio");
+		candidato2.setEdad(72);
+		lstCandidatos.add(candidato2);*/
+				
+		
+		
+		/*BeanCandidato candidato4 = new BeanCandidato();
 		candidato4.setApellidos("Toledo Manrique");
 		candidato4.setNombre("Alejandro");
 		candidato4.setPartidoPolitico("Peru Posible");
@@ -90,7 +92,7 @@ public class CandidatoServiceImpl implements CandidatoService{
 		candidato11.setNombre("Rafael Luis");
 		candidato11.setPartidoPolitico("Partido Politico Adelante");
 		candidato11.setEdad(63);
-		lstCandidatos.add(candidato11);
+		lstCandidatos.add(candidato11);*/
 		
 		return lstCandidatos;
 	}
