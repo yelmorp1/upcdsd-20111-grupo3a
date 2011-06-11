@@ -17,6 +17,8 @@ public class CandidatoServiceImpl implements CandidatoService{
 		candidato1.setApellidos("Fujimori Iguchi");
 		candidato1.setNombre("Keiko Sofia");
 		candidato1.setPartidoPolitico("Fuerza 2011");
+		candidato1.setCodReferencia("500099203");
+		candidato1.setCodSeleccion("logo17");
 		candidato1.setEdad(36);
 		candidato1.setFoto("fotoKeiko.jpg");
 		candidato1.setLogo("logoKeiko.jpg");
@@ -26,6 +28,8 @@ public class CandidatoServiceImpl implements CandidatoService{
 		candidato3.setApellidos("Humala Tazo");
 		candidato3.setNombre("Ollanta");
 		candidato3.setPartidoPolitico("Gana Peru");
+		candidato3.setCodReferencia("500099204");
+		candidato3.setCodSeleccion("logo23");
 		candidato3.setEdad(47);
 		candidato3.setFoto("fotoOllanta.jpg");
 		candidato3.setLogo("logoOllanta.jpg");
