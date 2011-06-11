@@ -6,7 +6,7 @@
 	
 	
 	<jaxws:client id="listadoCandidatosClient" serviceName="ListadoCandidatosService"
-		serviceClass="pe.edu.upc.dsd.votacion.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoServicios" />
+		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoServicios" />
 		
 		
 				
