@@ -9,7 +9,7 @@
   </listener>
   <servlet>
     <servlet-name>Votacion</servlet-name>
-    <servlet-class>pe.edu.upc.dsd.servlet.Votacion</servlet-class>
+    <servlet-class>pe.edu.upc.dsd.votacion.servlet.Votacion</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Votacion</servlet-name>

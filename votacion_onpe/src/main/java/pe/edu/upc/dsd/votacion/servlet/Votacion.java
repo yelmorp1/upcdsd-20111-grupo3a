@@ -10,9 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import pe.edu.upc.dsd.onpe.ws.ServiciosWeb;
 import pe.edu.upc.dsd.votacion.model.BeanCandidato;
-import pe.edu.upc.dsd.votacion.ws.ServiciosWeb;
 
 
 public class Votacion extends HttpServlet {
@@ -39,11 +40,11 @@ public class Votacion extends HttpServlet {
 	}
 	
 	public void verCedula(HttpServletRequest request,HttpServletResponse response) throws Exception{
-		ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
+		//ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
+		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
 		ServiciosWeb servicios = context.getBean("listadoCandidatosClient", ServiciosWeb.class);
 		
-		List<BeanCandidato>  candidatos = servicios.getListaCandidatos();
-		System.out.println("candidatos: "+ candidatos.size());
+		List<BeanCandidato>  candidatos = servicios.getListaCandidatos();		
 		response.sendRedirect(request.getContextPath()+"/fCedula.jsp");
 	}
 
