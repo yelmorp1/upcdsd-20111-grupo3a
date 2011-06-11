@@ -8,6 +8,8 @@ public class BeanCandidato implements Serializable{
 	private String apellidos;
 	private String partidoPolitico;
 	private int edad;
+	private String logo;
+	private String foto;
 	
 	
 	public void setNombre(String nombre) {
@@ -33,6 +35,18 @@ public class BeanCandidato implements Serializable{
 	}
 	public void setEdad(int edad) {
 		this.edad = edad;
+	}
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+	public String getLogo() {
+		return logo;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	public String getFoto() {
+		return foto;
 	}	
 	
 	
