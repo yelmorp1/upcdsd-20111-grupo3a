@@ -18,6 +18,8 @@ public class CandidatoServiceImpl implements CandidatoService{
 		candidato1.setNombre("Keiko Sofia");
 		candidato1.setPartidoPolitico("Fuerza 2011");
 		candidato1.setEdad(36);
+		candidato1.setFoto("fotoKeiko.jpg");
+		candidato1.setLogo("logoKeiko.jpg");
 		lstCandidatos.add(candidato1);
 		
 		BeanCandidato candidato3 = new BeanCandidato();
@@ -25,6 +27,8 @@ public class CandidatoServiceImpl implements CandidatoService{
 		candidato3.setNombre("Ollanta");
 		candidato3.setPartidoPolitico("Gana Peru");
 		candidato3.setEdad(47);
+		candidato3.setFoto("fotoOllanta.jpg");
+		candidato3.setLogo("logoOllanta.jpg");
 		lstCandidatos.add(candidato3);
 		
 		/*BeanCandidato candidato2 = new BeanCandidato();
