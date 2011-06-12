@@ -19,14 +19,14 @@ import pe.edu.upc.dsd.onpe.ws.ServiciosWeb;
 import pe.edu.upc.dsd.reniec.ws.ServicioReniec;
 import pe.edu.upc.dsd.votacion.model.BeanCandidato;
 import pe.edu.upc.dsd.votacion.model.BeanElector;
+import pe.edu.upc.dsd.votacion.service.VotacionService;
+import pe.edu.upc.dsd.votacion.service.VotacionServiceImpl;
 
 
 public class Votacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;    
 	
-	@Resource(name="queueMessageProducer")
-	private MessageProducer messageProducer;
-	
+
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			String tipo = request.getParameter("tipo");
@@ -54,15 +54,10 @@ public class Votacion extends HttpServlet {
 	
 	//envia los votos a una cola para su registro
 	public void votar(HttpServletRequest request,HttpServletResponse response) throws Exception{
-		String seleccion = request.getParameter("seleccion");
-		System.out.println("seleccion "+seleccion);
-		
-		try {
-			messageProducer.send("Voto por "+seleccion);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
+		String seleccion = request.getParameter("seleccion");			
+		VotacionService service = new VotacionServiceImpl();
+		service.votar(seleccion,context);
 		response.sendRedirect(request.getContextPath()+"/fConfirmacionVoto.jsp");
 	}
 

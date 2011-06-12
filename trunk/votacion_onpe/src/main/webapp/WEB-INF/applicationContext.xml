@@ -22,7 +22,8 @@
 	</bean>
 
 	<bean id="queueMessageProducer" class="pe.edu.upc.dsd.jms.MessageProducer">
-		<property name="jmsTemplate" ref="queueJmsTemplate" />		
+		<property name="jmsTemplate" ref="queueJmsTemplate" />	
+		<property name="requestDestination" value="voto" />	
 	</bean>
 				
 </beans>  
