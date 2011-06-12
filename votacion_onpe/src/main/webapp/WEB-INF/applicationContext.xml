@@ -4,11 +4,25 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd                                                 
 	 http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	
-	
+	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL">
+			<value>tcp://localhost:61616</value>
+		</property>
+	</bean>	
+
 	<jaxws:client id="listadoCandidatosClient" serviceName="ListadoCandidatosService"
 		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoServicios" />
 		
 	<jaxws:client id="listadoElectoresClient" serviceName="ListadoElectoresService"
 		serviceClass="pe.edu.upc.dsd.reniec.ws.ServicioReniec" address="http://localhost:8080/RENIEC/listadoElectores" />	
+	
+	
+	<bean id="queueJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+	</bean>
+
+	<bean id="queueMessageProducer" class="pe.edu.upc.dsd.jms.MessageProducer">
+		<property name="jmsTemplate" ref="queueJmsTemplate" />		
+	</bean>
 				
 </beans>  
