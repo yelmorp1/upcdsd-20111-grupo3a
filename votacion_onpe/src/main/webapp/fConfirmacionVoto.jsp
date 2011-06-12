@@ -37,19 +37,7 @@
 
 <body bgcolor="DFE8F5">
 <form action="<%=request.getContextPath()%>/votacion">
-<div class="ClaseDiv">
-      		<table cellspacing="0" cellpadding="0" border="0" background="images/bg_head.jpg" width="100%">
-        		<tbody>
-        			<tr>         				
-         				<th align="center" scope="row">
-         					<div class="ClaseTitulo1">
-            					<h2>VOTO ELECTR&Oacute;NICO</h2>	
-                			</div>
-         				</th>         				   	
-        			</tr>
-      			</tbody>
-      		</table>
-</div>	
+
 	<input type="hidden" name="tipo" value="votar"/>	
 	
 <div id="logo-app"><span>VENP Voto Electr&oacute;nico No Presencial</span></div>
@@ -100,7 +88,7 @@
 	</div><!-- fin de all -->
 
 	<div id="footer" style="background-color: #324B84">
-		<span>VENP</span>&nbsp;&nbsp;&nbsp;Copyright &copy; 2011 ONPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este sistema se ve mejor con una resoluci&oacute;n de 1024x768. 
+		<span>Desarrollo de Sistemas Distribuidos 2011</span> 
 	</div>	
 </form>	
 </body>
