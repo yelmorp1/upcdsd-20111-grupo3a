@@ -40,18 +40,12 @@
 <div class="ClaseDiv">
       		<table cellspacing="0" cellpadding="0" border="0" background="images/bg_head.jpg" width="100%">
         		<tbody>
-        			<tr>
-         				<th valign="top" align="center" width="12%" scope="row">
-         					<img height="95" width="86" alt="" src="images/logo_onpe2.jpg"/>
-         				</th>
-         				<th align="center" width="63%" scope="row">
+        			<tr>         				
+         				<th align="center" scope="row">
          					<div class="ClaseTitulo1">
-            					<h2>OFICINA NACIONAL DE PROCESOS ELECTORALES</h2>	
+            					<h2>VOTO ELECTR&Oacute;NICO</h2>	
                 			</div>
-         				</th>
-         				<th valign="top" align="center" width="25%" scope="row">
-         					<img height="95" width="199" longdesc="VOTO ELECTRONICO NO PRESENCIAL" alt="VENP" src="images/logo_venp.jpg"/>
-         				</th>     	
+         				</th>         				   	
         			</tr>
       			</tbody>
       		</table>
@@ -62,20 +56,11 @@
 </div>
 
 	<div id="all"> <!-- antes wiewreport -->
-
-		<!--<div id="header"> 
-			<div id="header-top">
-				<div id="logo-org-login"><span>ONPE</span></div>
-				<h2>OFICINA NACIONAL DE PROCESOS ELECTORALES</h2>	
-			</div> 
-			<div style="clear: both;"></div>			
-		</div>-->
-
 		<div id="wrap">
 	<div align="right" id="hora">&nbsp;</div>
 <div id="cnt" style="background-color:#DFE8F5;">
 <br />
-<center><h2>${requestScope.proceso}</h2></center>	
+<center><h2></h2></center>	
 <div class="contentCondicionUso">
 	<div class="block">
 		<h3>
