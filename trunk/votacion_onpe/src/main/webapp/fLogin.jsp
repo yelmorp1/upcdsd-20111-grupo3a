@@ -150,6 +150,6 @@
 				</div><!-- Fin de content -->
 			</div>
 			</form>
-		<div class="ClaseDiv2">2011   </div>
+		<div class="ClaseDiv2">Desarrollo de Sistemas Distribuidos </div>
 	</body>
 </html>
