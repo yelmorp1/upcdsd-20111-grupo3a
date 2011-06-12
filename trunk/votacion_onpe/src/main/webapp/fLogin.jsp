@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>VENP Voto Electr&oacute;nico No Presencial</title>
@@ -78,7 +78,7 @@
 									<tr>
 										<td colspan="2" style="height: 30px" >
 											<span class="campo">
-												Ingrese su PIN de <bean:message key="pin.len"/> dígitos
+												Ingrese su PIN
 											</span>
 										</td>
 				  					</tr>
@@ -99,7 +99,7 @@
 				  					</tr>
 									<tr>
 										<td style="width: 120px;vertical-align: top" colspan="2">								
-								  			<input type="text"  id="dni"  name="dni" class="inputtext2" maxlength="8"/>					  	
+								  			<input type="text"  id="dni"  name="dni" class="inputtext2" maxlength="15"/>					  	
 										</td>
   									</tr>
 				  					<tr>
@@ -139,6 +139,9 @@
 									
 								</table>
 							</div>
+							<%if(request.getParameter("e")!=null){ %>
+							<p style="color:red;">Los datos ingresados son incorrectos</p>
+							<%} %>
 							<div class="botonera">
 								<input type="submit" id="btnSubmit" class="boton" value="Ingresar" />
 							</div>		
