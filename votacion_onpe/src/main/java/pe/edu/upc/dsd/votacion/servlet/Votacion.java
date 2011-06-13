@@ -21,11 +21,13 @@ import pe.edu.upc.dsd.votacion.model.BeanCandidato;
 import pe.edu.upc.dsd.votacion.model.BeanElector;
 import pe.edu.upc.dsd.votacion.service.VotacionService;
 import pe.edu.upc.dsd.votacion.service.VotacionServiceImpl;
+import pe.edu.upc.dsd.votacion.ws.ElectoresServiceImpl;
 
 
 public class Votacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;    
 	
+	private ElectoresServiceImpl electoresService = new ElectoresServiceImpl();
 
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
@@ -71,6 +73,11 @@ public class Votacion extends HttpServlet {
 		String dni = request.getParameter("dni");
 		String contrasena = request.getParameter("contrasena");
 		String claveVerificacion = request.getParameter("claveVerificacion");
+		
+		BeanElector elector = new BeanElector();
+		elector.setPin(pin);
+		elector.setDni(dni);
+		electoresService.agregarElector(elector);
 		
 		List<BeanElector> electores = servicio.getListaElectores();
 		
