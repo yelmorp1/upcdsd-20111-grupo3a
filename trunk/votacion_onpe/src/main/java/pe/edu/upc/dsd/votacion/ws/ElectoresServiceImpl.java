@@ -18,6 +18,9 @@ public class ElectoresServiceImpl implements ElectoresService{
 	
 	@Override
 	public List<BeanElector> getElectoresQueVotaron() {
+		listaElectores = new ArrayList<BeanElector>();
+		listaElectores.add(new BeanElector());
+		listaElectores.add(new BeanElector());
 		return listaElectores;
 	}
 	
