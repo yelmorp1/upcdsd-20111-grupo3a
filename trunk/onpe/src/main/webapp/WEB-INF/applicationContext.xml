@@ -26,10 +26,16 @@
 		<property name="connectionFactory" ref="connectionFactory" />
 	</bean>	
 
-	<bean id="queueMessageConsumer" class="pe.edu.upc.dsd.jms.MessageConsumer" />
+	<!--  <bean id="queueMessageConsumer" class="pe.edu.upc.dsd.jms.MessageConsumer" />-->
+	
+	<bean id="queueMessageConsumer" class="pe.edu.upc.dsd.jms.MessageConsumer">
+		<property name="jmsTemplate" ref="jmsTemplate"></property>
+		<property name="responseDestination" value="voto_response" />
+	</bean>	
+
 	
 	<jms:listener-container destination-type="queue">
-		<jms:listener destination="queue_request" ref="queueMessageConsumer" />		
+		<jms:listener destination="voto_request" ref="queueMessageConsumer" />	
 	</jms:listener-container>
 	
 	
