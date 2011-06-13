@@ -14,8 +14,7 @@
 		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoServicios" />
 		
 	<jaxws:client id="listadoElectoresClient" serviceName="ListadoElectoresService"
-		serviceClass="pe.edu.upc.dsd.reniec.ws.ServicioReniec" address="http://localhost:8080/RENIEC/listadoElectores" />	
-	
+		serviceClass="pe.edu.upc.dsd.reniec.ws.ServicioReniec" address="http://localhost:8080/RENIEC/listadoElectores" />		
 	
 	<bean id="queueJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
 		<property name="connectionFactory" ref="connectionFactory" />
@@ -23,7 +22,8 @@
 
 	<bean id="queueMessageProducer" class="pe.edu.upc.dsd.jms.MessageProducer">
 		<property name="jmsTemplate" ref="queueJmsTemplate" />	
-		<property name="requestDestination" value="voto" />	
+		<property name="requestDestination" value="voto_request" />	
+		<property name="responseDestination" value="voto_response" />
 	</bean>
 				
 </beans>  
