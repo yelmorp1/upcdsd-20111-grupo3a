@@ -1,7 +1,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       					http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+       					http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       					http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
@@ -13,5 +15,11 @@
 			<ref bean="multaService" />
 		</jaxrs:serviceBeans>
 	</jaxrs:server>
+	
+	<jaxws:client id="listadoElectoresClient" serviceName="ListadoElectoresService"
+		serviceClass="pe.edu.upc.dsd.reniec.ws.ServicioReniec" address="http://localhost:8080/RENIEC/listadoElectores" />		
+
+	<jaxws:client id="listadoElectoresQueVotaron" serviceName="ListadoElectoresService"
+		serviceClass="pe.edu.upc.dsd.votacion.ws.ElectoresService" address="http://localhost:8080/votacion_onpe/listadoElectoresQueVotaron" />	
 
 </beans>

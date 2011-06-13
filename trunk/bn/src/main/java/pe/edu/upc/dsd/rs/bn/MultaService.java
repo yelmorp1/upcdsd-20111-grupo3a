@@ -8,6 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import pe.edu.upc.dsd.bn.model.BeanElector;
 import pe.edu.upc.dsd.rs.bn.Multa;
 
 import com.google.gson.Gson;
@@ -18,6 +19,14 @@ public class MultaService {
 	@Path("/multas/")
 	@Produces("application/json")
 	public String getMulta() {
+		//obtiene la lista de todos los eletores habiles
+		List<BeanElector> listaElectores = new WSElectores().getElectores();
+		
+		//obtiene la lista de los electores que votaron
+		List<BeanElector> listaElectoresQueVotaron = new WSElectores().getElectoresQueVotaron();
+		
+			
+		
 		Gson gson = new Gson();
 		List<Multa> lista = new ArrayList<Multa>();		
 	
@@ -27,7 +36,7 @@ public class MultaService {
 		
 		lista.add(multa);
 		
-		 multa = new Multa();
+	    multa = new Multa();
 		multa.setMonto(1000);
 		multa.setDniElector("42722311");
 		
