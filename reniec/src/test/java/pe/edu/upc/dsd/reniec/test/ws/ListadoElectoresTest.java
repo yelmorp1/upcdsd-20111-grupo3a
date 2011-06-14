@@ -13,11 +13,12 @@ public class ListadoElectoresTest {
 	public ListadoElectoresTest() {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"/applicationContext.xml");
-		this.servicios = context.getBean("listadoCandidatosClient", ElectorService.class);
+		this.servicios = context.getBean("listadoCandidatosClient",
+				ElectorService.class);
 	}
 
 	@Test
 	public void testTamanioLista() {
-		Assert.assertEquals(4, servicios.getListaElectores().size());
+		Assert.assertEquals(31, servicios.getListaElectores().size());
 	}
 }
