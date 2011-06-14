@@ -4,6 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd                                                 
 	 http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	
+		
 	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
 		<property name="brokerURL">
 			<value>tcp://localhost:61616</value>
@@ -25,5 +26,10 @@
 		<property name="requestDestination" value="voto_request" />	
 		<property name="responseDestination" value="voto_response" />
 	</bean>
+	
+	<bean id="listadoElectoresQueVotaron_ws" class="pe.edu.upc.dsd.votacion.ws.ElectoresServiceImpl" />
+
+	<jaxws:endpoint id="listadoElectoresQueVotaronEndpoint"
+		implementor="#listadoElectoresQueVotaron_ws" address="/listadoElectoresQueVotaron" />
 				
 </beans>  
