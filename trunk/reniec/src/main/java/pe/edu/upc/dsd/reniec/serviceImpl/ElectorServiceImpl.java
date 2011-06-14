@@ -252,6 +252,13 @@ public class ElectorServiceImpl implements ElectorService{
 		elector30.setClave("123456");
 		lstElectores.add(elector30);
 		
+		BeanElector elector31 = new BeanElector();
+		elector31.setDni("123456789");
+		elector31.setNombre("LENNON");
+		elector31.setApellidos("SHIMOKAWA");
+		elector31.setPin("lshimokawa");
+		elector31.setClave("123456");
+		lstElectores.add(elector31);
 		return lstElectores;
 	}
 }
