@@ -5,10 +5,9 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-
 import pe.edu.upc.dsd.bn.model.BeanElector;
+import pe.edu.upc.dsd.onpe.ws.ServiciosWeb;
 import pe.edu.upc.dsd.reniec.ws.ServicioReniec;
-import pe.edu.upc.dsd.votacion.ws.ElectoresService;
 
 public class WSElectores {
 
@@ -20,8 +19,8 @@ public class WSElectores {
 	
 	public List<BeanElector> getElectoresQueVotaron(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
-		ElectoresService servicio = context.getBean("listadoElectoresQueVotaron", ElectoresService.class);
-		return servicio.getElectoresQueVotaron();
+		ServiciosWeb servicio = context.getBean("listadoElectoresQueVotaron", ServiciosWeb.class);
+		return servicio.getListaElectoresQueVotaron();
 	}
 	
 }
