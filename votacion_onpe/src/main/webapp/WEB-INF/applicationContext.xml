@@ -23,13 +23,8 @@
 
 	<bean id="queueMessageProducer" class="pe.edu.upc.dsd.jms.MessageProducer">
 		<property name="jmsTemplate" ref="queueJmsTemplate" />	
-		<property name="requestDestination" value="voto_request" />	
-		<property name="responseDestination" value="voto_response" />
-	</bean>
+		<property name="requestDestination" value="voto_request" />			
+	</bean>	
 	
-	<bean id="listadoElectoresQueVotaron_ws" class="pe.edu.upc.dsd.votacion.ws.ElectoresServiceImpl" />
-
-	<jaxws:endpoint id="listadoElectoresQueVotaronEndpoint"
-		implementor="#listadoElectoresQueVotaron_ws" address="/listadoElectoresQueVotaron" />
 				
 </beans>  

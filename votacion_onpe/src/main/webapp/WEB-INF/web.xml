@@ -14,11 +14,9 @@
   <servlet-mapping>
     <servlet-name>Votacion</servlet-name>
     <url-pattern>/Votacion</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> 
+		
   <welcome-file-list>
     <welcome-file>fLogin.jsp</welcome-file>
-  </welcome-file-list>
-  
-  
- 
+  </welcome-file-list> 
 </web-app>
