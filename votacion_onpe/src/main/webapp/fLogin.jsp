@@ -107,7 +107,7 @@
 				                    </tr>
 				  					<tr>
 					  					<td colspan="2" style="height: 30px">
-					  						<span class="campo">Ingresar su contraseña con el teclado virtual</span>
+					  						<span class="campo">Ingresar su contrase&ntilde;a con el teclado virtual</span>
 					  					</td>
 				  					</tr>
 									<tr>
@@ -125,7 +125,7 @@
                     				</tr>                    
                     				<tr>
                     					<td colspan="2" style="height: 30px">
-                    						<span class="campo">Ingresar clave de verificación de la imagen</span>
+                    						<span class="campo">Ingresar clave de verificaci&oacute;n de la imagen</span>
                     					</td>
            							</tr>
 									<tr>	
