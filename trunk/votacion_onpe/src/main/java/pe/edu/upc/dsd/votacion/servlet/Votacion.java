@@ -36,11 +36,11 @@ public class Votacion extends HttpServlet {
 		}
 	}
 	
+	
 	//obtiene la lista de candidatos del WS de ONPE para poder generar la cedula
 	public void verCedula(HttpServletRequest request,HttpServletResponse response) throws Exception{		
 		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
-		ServiciosWeb servicios = context.getBean("listadoCandidatosClient", ServiciosWeb.class);
-		
+		ServiciosWeb servicios = context.getBean("listadoServiciosOnpeClient", ServiciosWeb.class);		
 		List<BeanCandidato>  candidatos = servicios.getListaCandidatos();	
 		request.getSession().setAttribute("candidatos", candidatos);
 		response.sendRedirect(request.getContextPath()+"/cedula.jsp");
@@ -51,40 +51,45 @@ public class Votacion extends HttpServlet {
 	public void votar(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
 		String seleccion = request.getParameter("seleccion");			
-		VotacionService service = new VotacionServiceImpl();
-		service.votar(seleccion,context);
+		VotacionService service = new VotacionServiceImpl(); //esta clase se encarga de enviar a la cola
+		service.votar(seleccion, context);
 		response.sendRedirect(request.getContextPath()+"/fConfirmacionVoto.jsp");
 	}
 
 	
 	//obtiene la lista de electores del WS de RENIEC para poder validar el ingreso
 	public void validarLogin(HttpServletRequest request,HttpServletResponse response) throws Exception{		
-		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
-		ServicioReniec servicio = context.getBean("listadoElectoresClient", ServicioReniec.class);
 		
+		//obtiene los datos ingresados en el formulario jsp
 		String pin = request.getParameter("pin");
 		String dni = request.getParameter("dni");
 		String contrasena = request.getParameter("contrasena");
 		String claveVerificacion = request.getParameter("claveVerificacion");
 		
-		List<BeanElector> electores = servicio.getListaElectores();
+		//obtiene los clientes WS de RENIEC y ONPE del applicationContext
+		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());		
+		ServicioReniec serviciosReniec = context.getBean("listadoElectoresClient", ServicioReniec.class);
+		ServiciosWeb serviciosOnpe = context.getBean("listadoServiciosOnpeClient", ServiciosWeb.class);		
 		
+		//envia los datos del elector a la ONPE para saber que ya entro a votar
+		BeanElector electorLogueado = new BeanElector();
+		electorLogueado.setPin(pin);
+		electorLogueado.setDni(dni);
+		electorLogueado.setClave(contrasena);
+		serviciosOnpe.agregarElectorQueYaVoto(electorLogueado);
+		
+		//obtiene los electores habiles de RENIEC y valida el ingreso
+		List<BeanElector> electores = serviciosReniec.getListaElectores();			
 		boolean existe =false;
 		for(BeanElector e : electores){
 			if(e.getPin().equals(pin)&& e.getDni().equals(dni) && e.getClave().equals(contrasena) &&
 			   claveVerificacion.equals("sy4sn4")){			
 				existe =true;
 				break;
-			}else{						
-				existe =false;
-			}
+			}else existe = false; 
 		}
-		if(existe)
-			response.sendRedirect(request.getContextPath()+"/fCondUso.jsp");
-		else{			
-			response.sendRedirect(request.getContextPath()+"/fLogin.jsp?e=true");			
-		}
-		
+		if(existe) response.sendRedirect(request.getContextPath()+"/fCondUso.jsp");
+		else response.sendRedirect(request.getContextPath()+"/fLogin.jsp?e=true");		
 	}
 }
 
