@@ -25,29 +25,28 @@ public class MultaService {
 		//obtiene la lista de los electores que votaron
 		List<BeanElector> listaElectoresQueVotaron = new WSElectores().getElectoresQueVotaron();
 		
-			
+		//lista de electores que NO votaron
+		List<BeanElector> listaElectoresQueNoVotaron = new ArrayList<BeanElector>();
+		
+		for(BeanElector elector:listaElectores){
+			for(BeanElector votante:listaElectoresQueVotaron){
+				if(!elector.getDni().equals(votante.getDni())){
+					listaElectoresQueNoVotaron.add(elector);
+				}
+			}	
+		}
 		
 		Gson gson = new Gson();
-		List<Multa> lista = new ArrayList<Multa>();		
-	
-		Multa multa = new Multa();
-		multa.setMonto(2000);
-		multa.setDniElector("44501659");
+		List<Multa> lista = new ArrayList<Multa>();	
 		
-		lista.add(multa);
-		
-	    multa = new Multa();
-		multa.setMonto(1000);
-		multa.setDniElector("42722311");
-		
-		lista.add(multa);
-		
-		 multa = new Multa();
-		multa.setMonto(50000);
-		multa.setDniElector("08524439");
-		
-		lista.add(multa);
-		
+		for(BeanElector multado:listaElectoresQueNoVotaron){
+			Multa multa = new Multa();
+			multa.setMonto(150);
+			multa.setDniElector(multado.getDni());
+			
+			lista.add(multa);
+		}
+
 		return gson.toJson(lista); // Convierto de un bean Java a JSON ;)
 	}
 	
