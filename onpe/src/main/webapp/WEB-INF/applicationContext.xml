@@ -13,8 +13,7 @@
 	
 
 	<bean id="servicios_ws" class="pe.edu.upc.dsd.onpe.ws.ServiciosWebImpl" />
-
-	<jaxws:endpoint id="listadoCandidatosdEndpoint" implementor="#servicios_ws" address="/listadoServicios" />
+	<jaxws:endpoint id="listadoServiciosOnpedEndpoint" implementor="#servicios_ws" address="/listadoServicios" />
 		
 	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
 		<property name="brokerURL">
@@ -25,14 +24,8 @@
 	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
 		<property name="connectionFactory" ref="connectionFactory" />
 	</bean>	
-
-	<!--  <bean id="queueMessageConsumer" class="pe.edu.upc.dsd.jms.MessageConsumer" />-->
 	
-	<bean id="queueMessageConsumer" class="pe.edu.upc.dsd.jms.MessageConsumer">
-		<property name="jmsTemplate" ref="jmsTemplate"></property>
-		<property name="responseDestination" value="voto_response" />
-	</bean>	
-
+	<bean id="queueMessageConsumer" class="pe.edu.upc.dsd.jms.MessageConsumer" />	
 	
 	<jms:listener-container destination-type="queue">
 		<jms:listener destination="voto_request" ref="queueMessageConsumer" />	
