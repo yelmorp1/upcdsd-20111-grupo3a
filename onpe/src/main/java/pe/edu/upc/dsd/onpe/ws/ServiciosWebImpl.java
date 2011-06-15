@@ -39,8 +39,7 @@ public class ServiciosWebImpl implements ServiciosWeb {
 	public void agregarElectorQueYaVoto(BeanElector elector) {
 		if(listaElectoresQueVotaron==null)
 			listaElectoresQueVotaron = new ArrayList<BeanElector>();
-		listaElectoresQueVotaron.add(elector);
-		
+		listaElectoresQueVotaron.add(elector);		
 	}
 
 }
