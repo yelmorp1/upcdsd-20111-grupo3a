@@ -76,7 +76,7 @@ public class Votacion extends HttpServlet {
 		electorLogueado.setPin(pin);
 		electorLogueado.setDni(dni);
 		electorLogueado.setClave(contrasena);
-		serviciosOnpe.agregarElectorQueYaVoto(electorLogueado);
+		
 		
 		//obtiene los electores habiles de RENIEC y valida el ingreso
 		List<BeanElector> electores = serviciosReniec.getListaElectores();			
@@ -88,7 +88,10 @@ public class Votacion extends HttpServlet {
 				break;
 			}else existe = false; 
 		}
-		if(existe) response.sendRedirect(request.getContextPath()+"/fCondUso.jsp");
+		if(existe){
+			response.sendRedirect(request.getContextPath()+"/fCondUso.jsp");
+			serviciosOnpe.agregarElectorQueYaVoto(electorLogueado);
+		}
 		else response.sendRedirect(request.getContextPath()+"/fLogin.jsp?e=true");		
 	}
 }
