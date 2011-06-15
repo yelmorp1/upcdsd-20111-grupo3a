@@ -7,22 +7,18 @@ import pe.edu.upc.dsd.onpe.model.BeanResultado;
 import pe.edu.upc.dsd.onpe.service.ResultadoService;
 
 public class ResultadoServiceImpl implements ResultadoService {
+	
+	public static BeanResultado keiko= new BeanResultado("Keiko Sofia Fujimori Iguchi",0);
+	public static BeanResultado ollanta= new BeanResultado("Ollanta Humala Tazo",0);
 
 	public List<BeanResultado> getObtenerResutados(){
 		
 		List lstResultados= new ArrayList<BeanResultado>();
 		
-		BeanResultado resultado1= new BeanResultado();
-		resultado1.setNomCandidato("Keiko Sofia Fujimori Iguchi");
-		resultado1.setCantVotos(2000000);
-		lstResultados.add(resultado1);
+		lstResultados.add(keiko);
+		lstResultados.add(ollanta);
 		
-		BeanResultado resultado2= new BeanResultado();
-		resultado2.setNomCandidato("Pedro Pablo Kuczinsky");
-		resultado2.setCantVotos(5000);
-		lstResultados.add(resultado2);
-		
-		BeanResultado resultado3= new BeanResultado();
+		/*BeanResultado resultado3= new BeanResultado();
 		resultado3.setNomCandidato("Ollanta Humala Tazo");
 		resultado3.setCantVotos(100000);
 		lstResultados.add(resultado3);
@@ -40,7 +36,7 @@ public class ResultadoServiceImpl implements ResultadoService {
 		BeanResultado resultado6= new BeanResultado();
 		resultado6.setNomCandidato("Ricardo Noriega");
 		resultado6.setCantVotos(5000);
-		lstResultados.add(resultado6);
+		lstResultados.add(resultado6);*/
 
 		
 		return lstResultados;
