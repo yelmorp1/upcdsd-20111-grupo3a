@@ -21,13 +21,13 @@ public class ListadoCandidatosTest {
 
 	@Test
 	public void testCantidadCandidatos() {
-		Assert.assertEquals(11, servicios.getListaCandidatos().size());
+		Assert.assertEquals(2, servicios.getListaCandidatos().size());
 	}
 	
 	
 	@Test
-	public void testEdadDePPK() {
-		Assert.assertEquals(72, ((BeanCandidato)servicios.getListaCandidatos().get(1)).getEdad());
+	public void testEdadDeOllanta() {
+		Assert.assertEquals(47, ((BeanCandidato)servicios.getListaCandidatos().get(1)).getEdad());
 	}
 	
 	
