@@ -17,7 +17,6 @@
 </style>
 <script type="text/javascript">
 	function selec(imagen){
-		alert(imagen);
 		if(imagen=='logo17'){
 			if(document.forms[0].voto1.value=='logo17_on'){
 				document.forms[0].voto1.value='';		
