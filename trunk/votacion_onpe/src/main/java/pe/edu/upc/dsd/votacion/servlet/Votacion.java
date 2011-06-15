@@ -3,31 +3,24 @@ package pe.edu.upc.dsd.votacion.servlet;
 import java.io.IOException;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.junit.Assert;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import pe.edu.upc.dsd.jms.MessageProducer;
 import pe.edu.upc.dsd.onpe.ws.ServiciosWeb;
 import pe.edu.upc.dsd.reniec.ws.ServicioReniec;
 import pe.edu.upc.dsd.votacion.model.BeanCandidato;
 import pe.edu.upc.dsd.votacion.model.BeanElector;
 import pe.edu.upc.dsd.votacion.service.VotacionService;
 import pe.edu.upc.dsd.votacion.service.VotacionServiceImpl;
-import pe.edu.upc.dsd.votacion.ws.ElectoresServiceImpl;
 
 
 public class Votacion extends HttpServlet {
-	private static final long serialVersionUID = 1L;    
-	
-	private ElectoresServiceImpl electoresService = new ElectoresServiceImpl();
+	private static final long serialVersionUID = 1L;
 
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
@@ -73,11 +66,6 @@ public class Votacion extends HttpServlet {
 		String dni = request.getParameter("dni");
 		String contrasena = request.getParameter("contrasena");
 		String claveVerificacion = request.getParameter("claveVerificacion");
-		
-		BeanElector elector = new BeanElector();
-		elector.setPin(pin);
-		elector.setDni(dni);
-		electoresService.agregarElector(elector);
 		
 		List<BeanElector> electores = servicio.getListaElectores();
 		

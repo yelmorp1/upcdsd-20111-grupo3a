@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
   
   <build>
-		<finalName>ws-server</finalName>
+		<finalName>votacion_onpe</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
