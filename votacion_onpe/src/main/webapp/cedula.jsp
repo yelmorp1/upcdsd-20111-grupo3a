@@ -17,13 +17,14 @@
 </style>
 <script type="text/javascript">
 	function selec(imagen){
+		alert(imagen);
 		if(imagen=='logo17'){
 			if(document.forms[0].voto1.value=='logo17_on'){
 				document.forms[0].voto1.value='';		
 				document.getElementById('logo500099203').src = '${pageContext.request.contextPath}/images/practique_como_votar_imgs/logoKeiko.jpg';				
 			}else{
 				document.forms[0].voto1.value='logo17_on';
-				document.forms[0].seleccion.value="500099203";
+				document.forms[0].seleccion.value="K";
 				document.getElementById('logo500099203').src = '${pageContext.request.contextPath}/images/practique_como_votar_imgs/logoKeiko_on.jpg';	
 				document.forms[0].voto2.value='';		
 				document.getElementById('logo500099204').src = '${pageContext.request.contextPath}/images/practique_como_votar_imgs/logoOllanta.jpg';								
@@ -35,7 +36,7 @@
 				document.getElementById('logo500099204').src = '${pageContext.request.contextPath}/images/practique_como_votar_imgs/logoOllanta.jpg';
 			}else{
 				document.forms[0].voto2.value='logo23_on';		
-				document.forms[0].seleccion.value="500099204";
+				document.forms[0].seleccion.value="O";
 				document.getElementById('logo500099204').src = '${pageContext.request.contextPath}/images/practique_como_votar_imgs/logoOllanta_on.jpg';	
 				document.forms[0].voto1.value='';		
 				document.getElementById('logo500099203').src = '${pageContext.request.contextPath}/images/practique_como_votar_imgs/logoKeiko.jpg';				
