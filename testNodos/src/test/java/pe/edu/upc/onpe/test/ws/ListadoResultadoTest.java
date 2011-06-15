@@ -21,13 +21,19 @@ public class ListadoResultadoTest {
 	}
 	
 	@Test
-	public void testObtenerResultados() {
-		Assert.assertEquals(6, servicios.getObtenerResutados().size());
+	public void testCandidatos() {
+		Assert.assertEquals(2, servicios.getObtenerResutados().size());
 	}
 	
 	@Test
-	public void testCantidadVotosOllanta() {
-		Assert.assertEquals(100000, ((BeanResultado)servicios.getObtenerResutados().get(2)).getCantVotos());
+	public void testCantidadvotosInicial() {
+		Assert.assertEquals(0, ((BeanResultado)servicios.getObtenerResutados().get(0)).getCantVotos());
+		Assert.assertEquals(0, ((BeanResultado)servicios.getObtenerResutados().get(1)).getCantVotos());
 	}
 	
+	@Test
+	public void testCantidadVotos() {
+		System.out.println("Votos Keiko: "+((BeanResultado)servicios.getObtenerResutados().get(0)).getCantVotos());
+		System.out.println("Votos Ollanta: "+((BeanResultado)servicios.getObtenerResutados().get(1)).getCantVotos());
+	}
 }
