@@ -1,17 +1,11 @@
 package pe.edu.upc.dsd.jms;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
-import javax.jms.Session;
 import javax.jms.TextMessage;
 
-import org.apache.log4j.Logger;
-import org.springframework.jms.core.JmsTemplate;
-import org.springframework.jms.core.MessageCreator;
 
 import pe.edu.upc.dsd.onpe.serviceImpl.ResultadoServiceImpl;
 
