@@ -11,7 +11,7 @@
 		</property>
 	</bean>	
 
-	<jaxws:client id="listadoCandidatosClient" serviceName="ListadoCandidatosService"
+	<jaxws:client id="listadoServiciosOnpeClient" serviceName="ListadoServiciosOnpeService"
 		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoServicios" />
 		
 	<jaxws:client id="listadoElectoresClient" serviceName="ListadoElectoresService"
@@ -23,7 +23,7 @@
 
 	<bean id="queueMessageProducer" class="pe.edu.upc.dsd.jms.MessageProducer">
 		<property name="jmsTemplate" ref="queueJmsTemplate" />	
-		<property name="requestDestination" value="voto_request" />			
+		<property name="requestDestination" value="votos" />			
 	</bean>	
 	
 				
