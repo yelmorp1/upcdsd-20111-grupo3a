@@ -62,7 +62,7 @@
 
 					<p><strong>Su voto ha sido registrado satisfactoriamente.</strong></p>
 					<br>
-      				<p><strong>La constancia de votaci&oacute;n se enviar&aacute; al correo electrónico registrado en el padr&oacute;n en las próximas 24 horas.</strong></p>
+      				<p><strong>La constancia de votaci&oacute;n se enviar&aacute; al correo electr&oacute;nico registrado en el padr&oacute;n en las pr&oacute;ximas 24 horas.</strong></p>
 				</p>
 			</div>		
 			<div>
