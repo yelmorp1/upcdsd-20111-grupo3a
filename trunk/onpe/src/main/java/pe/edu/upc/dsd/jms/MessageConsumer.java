@@ -28,7 +28,7 @@ public class MessageConsumer implements MessageListener {
 					ResultadoServiceImpl.keiko.setCantVotos(ResultadoServiceImpl.keiko.getCantVotos()+1);
 					
 				}else if(voto_elector.equals(OLLANTA)){
-					ResultadoServiceImpl.ollanta.setCantVotos(ResultadoServiceImpl.keiko.getCantVotos()+1);
+					ResultadoServiceImpl.ollanta.setCantVotos(ResultadoServiceImpl.ollanta.getCantVotos()+1);
 				}
 				
 			} catch (final JMSException e) {
