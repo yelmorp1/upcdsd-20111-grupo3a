@@ -50,7 +50,8 @@ public class Votacion extends HttpServlet {
 	//envia los votos a una cola para su registro
 	public void votar(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
-		String seleccion = request.getParameter("seleccion");			
+		String seleccion = request.getParameter("seleccion");
+		System.out.println("eleccion: "+seleccion);
 		VotacionService service = new VotacionServiceImpl(); //esta clase se encarga de enviar a la cola
 		service.votar(seleccion, context);
 		response.sendRedirect(request.getContextPath()+"/fConfirmacionVoto.jsp");
