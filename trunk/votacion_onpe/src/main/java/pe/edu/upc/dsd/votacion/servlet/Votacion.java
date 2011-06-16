@@ -1,6 +1,7 @@
 package pe.edu.upc.dsd.votacion.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -15,6 +16,7 @@ import pe.edu.upc.dsd.onpe.ws.ServiciosWeb;
 import pe.edu.upc.dsd.reniec.ws.ServicioReniec;
 import pe.edu.upc.dsd.votacion.model.BeanCandidato;
 import pe.edu.upc.dsd.votacion.model.BeanElector;
+import pe.edu.upc.dsd.votacion.model.BeanResultado;
 import pe.edu.upc.dsd.votacion.service.VotacionService;
 import pe.edu.upc.dsd.votacion.service.VotacionServiceImpl;
 
@@ -30,6 +32,8 @@ public class Votacion extends HttpServlet {
 			else if(tipo.equalsIgnoreCase("fCedula"))
 				verCedula(request,response);			
 			else if(tipo.equalsIgnoreCase("votar"))
+				votar(request,response);
+			else if(tipo.equalsIgnoreCase("resultados"))
 				votar(request,response);
 		} catch (Exception e) {			
 			e.printStackTrace();
@@ -95,6 +99,19 @@ public class Votacion extends HttpServlet {
 		}
 		else response.sendRedirect(request.getContextPath()+"/fLogin.jsp?e=true");		
 	}
+	
+	//obtiene los resultados del WS de ONPE para mostrarlos en resultados.jsp
+	public void resultados(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
+		//ServiciosWeb serviciosOnpe = context.getBean("listadoServiciosOnpeClient", ServiciosWeb.class);
+		List<BeanResultado> listaResultados = new ArrayList<BeanResultado>();		//serviciosOnpe.getObtenerResutados();
+		BeanResultado b = new BeanResultado();
+		b.setNomCandidato("Ollant");
+		b.setCantVotos(10);		
+		request.getSession().setAttribute("resultados", listaResultados);
+		response.sendRedirect(request.getContextPath()+"/resultados.jsp");
+	}
+	
 }
 
 
