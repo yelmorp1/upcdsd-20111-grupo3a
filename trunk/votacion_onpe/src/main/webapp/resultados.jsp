@@ -18,6 +18,7 @@ function enviar(){
 </head>
 <body>
 <form action="<%=request.getContextPath()%>/Votacion" method="post">
+<input type="hidden" name="tipo" id="tipo" value=""/>
 <center>
 	<input type ="button" value="Ver Resultados" class="boton" onclick="enviar();"/>
 	<br/>
