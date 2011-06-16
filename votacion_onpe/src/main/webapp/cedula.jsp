@@ -51,7 +51,7 @@
 	
 </script>
 </head>
-<body bgcolor="DFE8F5" bottommargin="0" leftmargin="0" onload="fn_onload();" rightmargin="0" topmargin="0">
+<body bgcolor="DFE8F5" bottommargin="0" leftmargin="0"  rightmargin="0" topmargin="0">
 <form action="${pageContext.request.contextPath}/Votacion" method="post">
 <input type="hidden" name="tipo" value="votar"/>
 
