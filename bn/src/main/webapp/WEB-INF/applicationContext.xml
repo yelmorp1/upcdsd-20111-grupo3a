@@ -20,6 +20,6 @@
 		serviceClass="pe.edu.upc.dsd.reniec.ws.ServicioReniec" address="http://localhost:8080/RENIEC/listadoElectores" />		
 
 	<jaxws:client id="listadoElectoresQueVotaron" serviceName="ListadoElectoresService"
-		serviceClass="pe.edu.upc.dsd.votacion.ws.ElectoresService" address="http://localhost:8080/onpe/listadoServicios" />	
+		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoServicios" />	
 
 </beans>
