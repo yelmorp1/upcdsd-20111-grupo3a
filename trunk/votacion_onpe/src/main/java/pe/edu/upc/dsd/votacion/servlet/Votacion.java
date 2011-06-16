@@ -34,7 +34,7 @@ public class Votacion extends HttpServlet {
 			else if(tipo.equalsIgnoreCase("votar"))
 				votar(request,response);
 			else if(tipo.equalsIgnoreCase("resultados"))
-				votar(request,response);
+				resultados(request,response);
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
