@@ -9,11 +9,17 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link type="text/css" rel="stylesheet" href="css/style-login.css"/>
 <title>Consulta de Resultados</title>
+<script type="text/javascript">
+function enviar(){
+	document.forms[0].tipo.value = "resultados";
+	document.forms[0].submit();
+}	
+</script>
 </head>
 <body>
 <form action="<%=request.getContextPath()%>/Votacion" method="post">
 <center>
-	<input type ="submit" value="Ver Resultados" class="boton"/>
+	<input type ="button" value="Ver Resultados" class="boton" onclick="enviar();"/>
 	<br/>
 	<c:if test="${resultados!=null}">
 		<table>
