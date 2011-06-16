@@ -105,8 +105,9 @@ public class Votacion extends HttpServlet {
 		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
 		ServiciosWeb serviciosOnpe = context.getBean("listadoServiciosOnpeClient", ServiciosWeb.class);
 		List<BeanResultado> listaResultados = serviciosOnpe.getObtenerResutados();				
-		request.getSession().setAttribute("resultados", listaResultados);
-		response.sendRedirect(request.getContextPath()+"/resultados.jsp");
+		request.setAttribute("resultados", listaResultados);
+		//response.sendRedirect(request.getContextPath()+"/resultados.jsp");
+		request.getRequestDispatcher("/resultados.jsp").forward(request, response);
 	}
 	
 }
