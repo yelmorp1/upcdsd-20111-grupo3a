@@ -103,11 +103,8 @@ public class Votacion extends HttpServlet {
 	//obtiene los resultados del WS de ONPE para mostrarlos en resultados.jsp
 	public void resultados(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(this.getServletContext());
-		//ServiciosWeb serviciosOnpe = context.getBean("listadoServiciosOnpeClient", ServiciosWeb.class);
-		List<BeanResultado> listaResultados = new ArrayList<BeanResultado>();		//serviciosOnpe.getObtenerResutados();
-		BeanResultado b = new BeanResultado();
-		b.setNomCandidato("Ollant");
-		b.setCantVotos(10);		
+		ServiciosWeb serviciosOnpe = context.getBean("listadoServiciosOnpeClient", ServiciosWeb.class);
+		List<BeanResultado> listaResultados = serviciosOnpe.getObtenerResutados();				
 		request.getSession().setAttribute("resultados", listaResultados);
 		response.sendRedirect(request.getContextPath()+"/resultados.jsp");
 	}
