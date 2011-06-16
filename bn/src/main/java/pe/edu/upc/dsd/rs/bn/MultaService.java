@@ -39,13 +39,13 @@ public class MultaService {
 		Gson gson = new Gson();
 		List<Multa> lista = new ArrayList<Multa>();	
 		
-		for(BeanElector multado:listaElectoresQueNoVotaron){
+		/*for(BeanElector multado:listaElectoresQueNoVotaron){
 			Multa multa = new Multa();
 			multa.setMonto(150);
 			multa.setDniElector(multado.getDni());
 			
 			lista.add(multa);
-		}
+		}*/
 
 		return gson.toJson(lista); // Convierto de un bean Java a JSON ;)
 	}
