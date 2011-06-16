@@ -22,7 +22,7 @@ function enviar(){
 	<input type ="button" value="Ver Resultados" class="boton" onclick="enviar();"/>
 	<br/>
 	<c:if test="${resultados!=null}">
-		<table>
+		<table border="1">
 			<tr>
 				<td>Candidato</td>
 				<td>Cantidad Votos</td>
