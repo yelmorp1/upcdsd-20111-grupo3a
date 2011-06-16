@@ -28,7 +28,7 @@ public class ListadoResultadoTest {
 	@Test
 	public void testCantidadvotosInicial() {
 		Assert.assertEquals(0, ((BeanResultado)servicios.getObtenerResutados().get(0)).getCantVotos());
-		Assert.assertEquals(0, ((BeanResultado)servicios.getObtenerResutados().get(1)).getCantVotos());
+		Assert.assertEquals(1, ((BeanResultado)servicios.getObtenerResutados().get(1)).getCantVotos());
 	}
 	
 	@Test
