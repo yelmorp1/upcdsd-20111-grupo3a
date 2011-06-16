@@ -193,7 +193,7 @@
 	</div><!-- fin de all -->
 
 	<div id="footer" style="background-color: #324B84">
-		<span>VENP 2011</span>
+		<span>Desarrollo de Sistemas Distribuidos</span>
 	</div>
 	</form>	
 </body>
