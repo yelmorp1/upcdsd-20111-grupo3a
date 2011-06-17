@@ -14,6 +14,7 @@ public class ServicioReniecImpl implements ServicioReniec{
 
 	@Override
 	public List<BeanElector> getListaElectores() {
+		System.out.println("entrando reniec servicio: getListaElectores");
 		ElectorService es = new ElectorServiceImpl();
 		return es.getListaElectores();
 	}
