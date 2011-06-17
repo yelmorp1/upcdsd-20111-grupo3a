@@ -20,18 +20,21 @@ public class ServiciosWebImpl implements ServiciosWeb {
 	
 	@Override
 	public List<BeanCandidato> getListaCandidatos() {
+		System.out.println("entrando onpe servicio: getListaCandidatos");
 		CandidatoService cs = new CandidatoServiceImpl();
 		return cs.getListaCandidatos();
 	}
 
 	@Override
 	public List<BeanResultado> getObtenerResutados() {
+		System.out.println("entrando onpe servicio: getObtenerResutados");
 		ResultadoService rs= new ResultadoServiceImpl();
 		return rs.getObtenerResutados();
 	}
 
 	@Override
 	public List<BeanElector> getListaElectoresQueVotaron() {
+		System.out.println("entrando onpe servicio: getListaElectoresQueVotaron");
 		if(listaElectoresQueVotaron==null){
 			listaElectoresQueVotaron = new ArrayList<BeanElector>();
 		}
