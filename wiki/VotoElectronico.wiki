@@ -12,7 +12,8 @@ Estará compuesto por cinco (5) nodos que son los siguientes:
 Será un Web Service que brinda la lista de electores al Módulo Web de Cédula Electrónica.<br>
 Parametros: Ningun.o<br>
 Retorno: Array List de Beans Electores Hábiles.<br><br>
-<b> Nodo2: JNE - Servicio de Lista de candidatos(Productor)</b><br>
+
+<b> Nodo2: ONPE - Servicio de Lista de candidatos(Productor)</b><br>
 Será un Web Service que brinda la lista de candidatos al Módulo de Cédula Electrónica.<br>
 Parametros: Ninguno.<br>
 Retorno: Array List de Beans Candidatos.<br><br>
