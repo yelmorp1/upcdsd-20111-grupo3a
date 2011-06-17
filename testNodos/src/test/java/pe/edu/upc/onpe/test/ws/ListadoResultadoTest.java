@@ -1,6 +1,7 @@
 package pe.edu.upc.onpe.test.ws;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -28,7 +29,7 @@ public class ListadoResultadoTest {
 	@Test
 	public void testCantidadvotosInicial() {
 		Assert.assertEquals(0, ((BeanResultado)servicios.getObtenerResutados().get(0)).getCantVotos());
-		Assert.assertEquals(1, ((BeanResultado)servicios.getObtenerResutados().get(1)).getCantVotos());
+		Assert.assertEquals(0, ((BeanResultado)servicios.getObtenerResutados().get(1)).getCantVotos());
 	}
 	
 	@Test
