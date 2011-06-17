@@ -32,6 +32,10 @@ public class ServiciosWebImpl implements ServiciosWeb {
 
 	@Override
 	public List<BeanElector> getListaElectoresQueVotaron() {
+		if(listaElectoresQueVotaron==null){
+			listaElectoresQueVotaron = new ArrayList<BeanElector>();
+		}
+		System.out.println("votaron: "+listaElectoresQueVotaron.size());
 		return listaElectoresQueVotaron;
 	}
 
