@@ -13,11 +13,11 @@ public class ListadoElectoresQueVotaronTest {
 	
 	public ListadoElectoresQueVotaronTest()	{
 		ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
-		this.servicios = context.getBean("listadoServiciosOnpeClient", ServiciosWeb.class);
+		this.servicios = context.getBean("listadoElectoresVotaronClient", ServiciosWeb.class);
 	}
 	
 	@Test
-	public void testCantidadCandidatos() {
+	public void testCantidadVotantes() {
 		Assert.assertEquals(1, servicios.getListaElectoresQueVotaron().size());
 	}
 	
