@@ -19,7 +19,9 @@ public class MultaService {
 	@Path("/multas/")
 	//@Produces("application/json")
 	@Produces("text/plain")
+	
 	public String getMulta() {
+		System.out.println("entrando bn servicio: getMulta");
 		//obtiene la lista de todos los eletores habiles
 		List<BeanElector> listaElectores = new WSElectores().getElectores();
 		
