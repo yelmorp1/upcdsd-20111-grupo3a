@@ -16,7 +16,8 @@
 	<jaxws:client id="listadoElectoresClient" serviceName="ListadoElectoresService"
 		serviceClass="pe.edu.upc.dsd.reniec.ws.ServicioReniec" address="http://localhost:8080/RENIEC/listadoElectores" />
 		
-	<jaxws:client id="listadoServiciosOnpeClient" serviceName="ListadoServiciosOnpeService"
+	<jaxws:client id="listadoElectoresVotaronClient" serviceName="ListadoServiciosOnpeService"
 		serviceClass="pe.edu.upc.dsd.onpe.ws.ServiciosWeb" address="http://localhost:8080/onpe/listadoServicios" />
+	
 		
 </beans>  
