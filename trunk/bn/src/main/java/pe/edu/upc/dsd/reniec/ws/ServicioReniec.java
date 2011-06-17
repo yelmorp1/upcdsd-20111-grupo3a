@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.jws.WebService;
 
-import pe.edu.upc.dsd.bn.model.BeanElector;
+import pe.edu.upc.dsd.reniec.model.BeanElector;
 
 
 
