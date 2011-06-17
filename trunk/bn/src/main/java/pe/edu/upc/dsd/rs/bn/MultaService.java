@@ -8,7 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import pe.edu.upc.dsd.bn.model.BeanElector;
+import pe.edu.upc.dsd.reniec.model.BeanElector;
 import pe.edu.upc.dsd.rs.bn.Multa;
 
 import com.google.gson.Gson;
@@ -17,7 +17,8 @@ public class MultaService {
 
 	@GET
 	@Path("/multas/")
-	@Produces("application/json")
+	//@Produces("application/json")
+	@Produces("text/plain")
 	public String getMulta() {
 		//obtiene la lista de todos los eletores habiles
 		List<BeanElector> listaElectores = new WSElectores().getElectores();
@@ -28,7 +29,13 @@ public class MultaService {
 		//lista de electores que NO votaron
 		List<BeanElector> listaElectoresQueNoVotaron = new ArrayList<BeanElector>();
 		
-		for(BeanElector elector:listaElectores){
+		int cElectores = (listaElectores!=null)?listaElectores.size():0;
+		int cVotantes = (listaElectoresQueVotaron!=null)?listaElectoresQueVotaron.size():0;
+		
+		int montoTotalDeuda= (cElectores - cVotantes) * 150;
+	
+		
+		/*for(BeanElector elector:listaElectores){
 			for(BeanElector votante:listaElectoresQueVotaron){
 				if(!elector.getDni().equals(votante.getDni())){
 					listaElectoresQueNoVotaron.add(elector);
@@ -39,15 +46,18 @@ public class MultaService {
 		Gson gson = new Gson();
 		List<Multa> lista = new ArrayList<Multa>();	
 		
-		/*for(BeanElector multado:listaElectoresQueNoVotaron){
+		for(BeanElector multado:listaElectoresQueNoVotaron){
 			Multa multa = new Multa();
 			multa.setMonto(150);
 			multa.setDniElector(multado.getDni());
 			
 			lista.add(multa);
-		}*/
+		}
 
-		return gson.toJson(lista); // Convierto de un bean Java a JSON ;)
+		return gson.toJson(lista); */// Convierto de un bean Java a JSON ;)
+		return "Deuda Total: s/."+montoTotalDeuda;
 	}
+	
+	
 	
 }
